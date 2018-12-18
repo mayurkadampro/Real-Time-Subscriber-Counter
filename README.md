@@ -1,5 +1,4 @@
-# Real-Time-Subscribe-Count-For-Desktop
-Real-Time Subscribe Count For Desktop with Java 
+# Real-Time Subscribe Counter Swing Application
 
 Watch The Complete Working (Demo) - coming soon
 
