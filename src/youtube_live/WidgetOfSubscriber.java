@@ -7,7 +7,6 @@ package youtube_live;
 
 import java.awt.Color;
 import java.awt.Desktop;
-import java.awt.Dimension;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
@@ -164,7 +163,6 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
                                 for (int j = 0; j < 10; j++) {
                                     new_sub1 = new_sub + j;
                                     TimeUnit.MILLISECONDS.sleep(3000);
-                                    System.out.println(new_sub1);
                                     jLabel5.setText(nf.format(new_sub1));
                                     past_update = false;
                                 }
