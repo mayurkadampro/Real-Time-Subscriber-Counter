@@ -147,6 +147,10 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
                             ChannelLink = "www.youtube.com/" + link;
                             jLabel4.setText(Username);
                             double subscribe = Integer.parseInt(myResponse2.getString("subscriberCount"));
+                            file = new File(workingDir + "\\"+Username+".txt");
+                            fileWriter = new FileWriter(file);
+                            fileWriter.write(id);
+                            fileWriter.close();
                             //below inside of if condition it's minus the subscriber only in the begining 
                             //only for show the counting........ so it's look similar to socialblade
                             if (past_update) {
@@ -160,11 +164,6 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
                                     jLabel5.setText(nf.format(new_sub1));
                                     past_update = false;
                                 }
-                                System.out.println(workingDir);
-                                file = new File(workingDir + "\\"+Username+".txt");
-                                fileWriter = new FileWriter(file);
-                                fileWriter.write(id);
-                                fileWriter.close();
                             }
 
                             if (UpdateSubWhenStart) {
