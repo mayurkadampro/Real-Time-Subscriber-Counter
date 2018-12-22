@@ -2,6 +2,8 @@
 
 Watch The Complete Working (Demo) - coming soon
 
+Download and try - https://goo.gl/i1VJua
+
 # Snapshots of Application
 
 | main screen | widget
