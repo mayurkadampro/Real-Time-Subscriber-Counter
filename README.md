@@ -2,8 +2,8 @@
 
 Watch The Complete Working (Demo) - coming soon
 
-![](https://github.com/mayurkadampro/Real-Time-Subscribe-Counter-GUI/blob/master/snapshot/Subscriber%20Count.png)
+# Snapshots of Application
 
-![](https://github.com/mayurkadampro/Real-Time-Subscribe-Counter-GUI/blob/master/snapshot/widget.png)
-
-
+| main screen | widget
+|:-:|:-:|
+| ![](https://github.com/mayurkadampro/Real-Time-Subscribe-Counter-GUI/blob/master/snapshot/Subscriber%20Count.png) | ![](https://github.com/mayurkadampro/Real-Time-Subscribe-Counter-GUI/blob/master/snapshot/widget.png)
