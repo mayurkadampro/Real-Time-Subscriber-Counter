@@ -6,6 +6,6 @@ Download and try - https://goo.gl/i1VJua
 
 # Snapshots of Application
 
-| main screen | widget
-|:-:|:-:|
-| ![](https://github.com/mayurkadampro/Real-Time-Subscribe-Counter-GUI/blob/master/snapshot/Subscriber%20Count.png) | ![](https://github.com/mayurkadampro/Real-Time-Subscribe-Counter-GUI/blob/master/snapshot/widget.png)
+| main screen | widget | pewdiepie
+|:-:|:-:|:-:|
+| ![](snapshot/Subscriber%20Count.png) | ![](snapshot/widget.png) | ![](snapshot/widget_pew.png)
