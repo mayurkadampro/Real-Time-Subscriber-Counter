@@ -7,7 +7,9 @@ package youtube_live;
 
 import java.awt.Color;
 import java.awt.Desktop;
+import java.awt.Dimension;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.io.BufferedReader;
@@ -41,7 +43,7 @@ import org.json.JSONObject;
  * @author Mayur
  */
 public class WidgetOfSubscriber extends javax.swing.JWindow {
-    
+
     private int pressedx;
     private int pressedy;
     private NumberFormat nf;
@@ -65,13 +67,15 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
     String workingDir = System.getProperty("user.dir");
     File file;
     FileWriter fileWriter;
+    int width = Toolkit.getDefaultToolkit().getScreenSize().width/2;
+    int height = Toolkit.getDefaultToolkit().getScreenSize().height;
 
     /**
      * Creates new form WidgetOfSubscriber
      *
      * @param Id
      */
-    public WidgetOfSubscriber(String Id) throws IOException {
+    public WidgetOfSubscriber(String Id) throws Exception {
         initComponents();
         jLabel1.setBackground(new Color(0, 0, 0, 0));
         jLabel5.setText(Id);
@@ -94,7 +98,7 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
             }
 
         });
-        this.setLocationRelativeTo(null);
+        this.setLocation(width+355,5);
         this.setBackground(new Color(0, 0, 0, 0));
 
     }
@@ -147,7 +151,7 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
                             ChannelLink = "www.youtube.com/" + link;
                             jLabel4.setText(Username);
                             double subscribe = Integer.parseInt(myResponse2.getString("subscriberCount"));
-                            file = new File(workingDir + "\\" + Username + ".txt");
+                            file = new File(workingDir + "\\ID.txt");
                             fileWriter = new FileWriter(file);
                             fileWriter.write(id);
                             fileWriter.close();

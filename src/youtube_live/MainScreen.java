@@ -7,6 +7,10 @@ package youtube_live;
 
 import java.awt.Color;
 import java.awt.Desktop;
+import java.io.DataInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.net.URI;
 import java.net.URISyntaxException;
@@ -27,11 +31,13 @@ public class MainScreen extends javax.swing.JFrame {
     /**
      * Creates new form MainScreen
      */
-    public MainScreen() {
+    public MainScreen() throws Exception {
         initComponents();
         jLabel1.setBackground(new Color(0, 0, 0, 0));
         this.setLocationRelativeTo(null);
         this.setBackground(new Color(0, 0, 0, 0));
+
+
     }
 
     /**
@@ -228,7 +234,7 @@ public class MainScreen extends javax.swing.JFrame {
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
         if (IdText.getText().isEmpty()) {
-             JOptionPane.showMessageDialog(null, "Please Enter Channel Id");
+            JOptionPane.showMessageDialog(null, "Please Enter Channel Id");
         } else {
             try {
                 String Id = IdText.getText().trim();
@@ -340,7 +346,11 @@ public class MainScreen extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new MainScreen().setVisible(true);
+                try {
+                    new MainScreen().setVisible(true);
+                } catch (Exception ex) {
+                    Logger.getLogger(MainScreen.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         });
     }
