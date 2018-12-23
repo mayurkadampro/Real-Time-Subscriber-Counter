@@ -66,8 +66,7 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
     String workingDir = System.getProperty("user.dir");
     File file;
     FileWriter fileWriter;
-    int width = Toolkit.getDefaultToolkit().getScreenSize().width/2;
-    int height = Toolkit.getDefaultToolkit().getScreenSize().height;
+    int width = Toolkit.getDefaultToolkit().getScreenSize().width;
 
     /**
      * Creates new form WidgetOfSubscriber
@@ -97,7 +96,7 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
             }
 
         });
-        this.setLocation(width+355,5);
+        this.setLocation(width-410,1);
         this.setBackground(new Color(0, 0, 0, 0));
 
     }
