@@ -304,7 +304,7 @@ public class MainScreen extends javax.swing.JFrame {
             if (Desktop.isDesktopSupported()) {
                 Desktop desktop = Desktop.getDesktop();
                 try {
-                    URI uri = new URI("paypal.me/mightyghosthack");
+                    URI uri = new URI("www.paypal.me/mightyghosthack");
                     desktop.browse(uri);
                 } catch (IOException | URISyntaxException ex) {
                 }
