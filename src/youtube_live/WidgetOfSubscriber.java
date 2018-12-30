@@ -21,6 +21,7 @@ import java.net.MalformedURLException;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.net.URL;
+import java.net.URLConnection;
 import java.text.NumberFormat;
 import java.util.Locale;
 import java.util.concurrent.TimeUnit;
@@ -114,6 +115,21 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
                     for (;;) {
                         String url = "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=" + id + "&key=" + APIKey;
                         URL obj = new URL(url);
+                        try{
+                        URLConnection connection = obj.openConnection();
+                        connection.connect();
+                        }catch(Exception e)
+                        {
+                            jLabel4.setText("Connection Problem");
+//                             jLabel4.addMouseListener(new MouseAdapter() {
+//                                 @Override
+//                                 public void mouseClicked(MouseEvent me) {
+//                                     MainFile mf = new MainFile();
+//                                     System.out.println("1");
+//                                 }
+                            });
+                            jLabel5.setText("");
+                        }
                         HttpURLConnection con = (HttpURLConnection) obj.openConnection();
                         // optional default is GET
                         con.setRequestMethod("GET");
