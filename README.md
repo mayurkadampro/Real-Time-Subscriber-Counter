@@ -2,7 +2,7 @@
 
 Watch The Complete Working (Demo) - https://youtu.be/5dekAJE3sq0
 
-Download and try - https://bit.ly/2F8bkau
+Download and try - https://goo.gl/hhb8nd
 
 # Snapshots of Application
 
