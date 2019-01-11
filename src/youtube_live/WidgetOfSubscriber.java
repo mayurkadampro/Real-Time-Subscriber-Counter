@@ -60,10 +60,10 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
     private int countforlink = 0;
     private int countformusic = 0;
     Image image = null;
-    ImageIcon img = new ImageIcon("C:\\Users\\Mayur\\Documents\\NetBeansProjects\\YouTube_Live\\src\\Images\\refresh.png");
-    ImageIcon img1 = new ImageIcon("C:\\Users\\Mayur\\Documents\\NetBeansProjects\\YouTube_Live\\src\\Images\\mute.png");
-    ImageIcon imgexit = new ImageIcon("C:\\Users\\Mayur\\Documents\\NetBeansProjects\\YouTube_Live\\src\\Images\\music-player.png");
-    ImageIcon img1exit = new ImageIcon("C:\\Users\\Mayur\\Documents\\NetBeansProjects\\YouTube_Live\\src\\Images\\mute_trans.png");
+    ImageIcon img = new ImageIcon("C:\\Users\\Mayur\\Documents\\NetBeansProjects\\Real-Time-Subscriber-Counter-master\\src\\Images\\refresh.png");
+    ImageIcon img1 = new ImageIcon("C:\\Users\\Mayur\\Documents\\NetBeansProjects\\Real-Time-Subscriber-Counter-master\\src\\Images\\mute.png");
+    ImageIcon imgexit = new ImageIcon("C:\\Users\\Mayur\\Documents\\NetBeansProjects\\Real-Time-Subscriber-Counter-master\\src\\Images\\music-player.png");
+    ImageIcon img1exit = new ImageIcon("C:\\Users\\Mayur\\Documents\\NetBeansProjects\\Real-Time-Subscriber-Counter-master\\src\\Images\\mute_trans.png");
     String workingDir = System.getProperty("user.dir");
     File file;
     FileWriter fileWriter;
@@ -242,7 +242,7 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
 
     public void playAlertOnReachMilestone() {
         try {
-            File sound = new File("C:\\Users\\Mayur\\Documents\\NetBeansProjects\\YouTube_Live\\src\\Sound\\beep-07.wav");
+            File sound = new File("C:\\Users\\Mayur\\Documents\\NetBeansProjects\\Real-Time-Subscriber-Counter-master\\src\\Sound\\beep-07.wav");
             AudioInputStream audio = null;
             audio = AudioSystem.getAudioInputStream(sound);
             Clip clip = AudioSystem.getClip();
@@ -256,7 +256,7 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
 
     public void playAlertOnEachSubscribe() {
         try {
-            File sound = new File("C:\\Users\\Mayur\\Documents\\NetBeansProjects\\YouTube_Live\\src\\Sound\\coin.wav");
+            File sound = new File("C:\\Users\\Mayur\\Documents\\NetBeansProjects\\Real-Time-Subscriber-Counter-master\\src\\Sound\\coin.wav");
             AudioInputStream audio = null;
             audio = AudioSystem.getAudioInputStream(sound);
             Clip clip = AudioSystem.getClip();
@@ -269,7 +269,7 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
 
     public void playAlertForLostSub() {
         try {
-            File sound = new File("C:\\Users\\Mayur\\Documents\\NetBeansProjects\\YouTube_Live\\src\\Sound\\lost.wav");
+            File sound = new File("C:\\Users\\Mayur\\Documents\\NetBeansProjects\\Real-Time-Subscriber-Counter-master\\src\\Sound\\lost.wav");
             AudioInputStream audio = null;
             audio = AudioSystem.getAudioInputStream(sound);
             Clip clip = AudioSystem.getClip();
