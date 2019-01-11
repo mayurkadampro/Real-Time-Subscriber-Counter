@@ -97,7 +97,7 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
             }
 
         });
-        this.setLocation(width-410,1);
+        this.setLocation(width - 410, 1);
         this.setBackground(new Color(0, 0, 0, 0));
 
     }
@@ -115,18 +115,18 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
                     for (;;) {
                         String url = "https://www.googleapis.com/youtube/v3/channels?part=snippet,statistics&id=" + id + "&key=" + APIKey;
                         URL obj = new URL(url);
-                        try{
-                        URLConnection connection = obj.openConnection();
-                        connection.connect();
-                        }catch(Exception e)
-                        {
+                        try {
+                            URLConnection connection = obj.openConnection();
+                            connection.connect();
+                        } catch (Exception e) {
                             jLabel4.setText("Connection Problem");
-//                             jLabel4.addMouseListener(new MouseAdapter() {
-//                                 @Override
-//                                 public void mouseClicked(MouseEvent me) {
-//                                     MainFile mf = new MainFile();
-//                                     System.out.println("1");
-//                                 }
+                            jLabel4.addMouseListener(new MouseAdapter() {
+                                @Override
+                                public void mouseClicked(MouseEvent me) {
+                                    MainFile mf = new MainFile();
+                                    System.out.println("1");
+                                }
+
                             });
                             jLabel5.setText("");
                         }
@@ -163,7 +163,6 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
                             String Username = myResponse3.getString("title");
                             String link = myResponse3.getString("customUrl");
                             ChannelLink = "www.youtube.com/" + link;
-                            jLabel4.setText(Username);
                             double subscribe = Integer.parseInt(myResponse2.getString("subscriberCount"));
                             file = new File(workingDir + "\\ID.txt");
                             fileWriter = new FileWriter(file);
@@ -171,9 +170,15 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
                             fileWriter.close();
                             //below inside of if condition it's minus the subscriber only in the begining 
                             //only for show the counting........ so it's look similar to socialblade
-                            if (past_update) {
+                            if (subscribe < 1) {
+                                //UCeVmancWx92vTZ9IPYOKnKg mighty
+                                jLabel4.setText("Subscriber are hidden");
+                                jLabel5.setText("by user");
+                                break;
+                            } else if (past_update) {
                                 double new_sub = subscribe - 10;
                                 //System.out.println(new_sub);
+                                jLabel4.setText(Username);
                                 jLabel5.setText(nf.format(new_sub));
                                 for (int j = 0; j < 10; j++) {
                                     new_sub1 = new_sub + j;
@@ -181,50 +186,50 @@ public class WidgetOfSubscriber extends javax.swing.JWindow {
                                     jLabel5.setText(nf.format(new_sub1));
                                     past_update = false;
                                 }
-                            }
-
-                            if (UpdateSubWhenStart) {
-                                subscriberUpdateWhenStart = subscribe;
-                                subscriberUpdateWhenStart += 1;
-                                UpdateSubWhenStart = false;
-                            }
-
-                            if (subscribe == subscriberUpdateWhenStart) {
-                                subscriberUpdateWhenStart += 1;
-                                if (countformusic % 2 == 0) {
-                                    playAlertOnEachSubscribe();
-                                }
-                                subscriberUpdateWhenStartforminus = subscribe;
-                                subscriberUpdateWhenStartforminus -= 1;
-
-                            } else if (subscribe == subscriberUpdateWhenStartforminus) {
-                                subscriberUpdateWhenStartforminus -= 1;
-                                if (countformusic % 2 == 0) {
-                                    playAlertForLostSub();
-                                }
-                                subscriberUpdateWhenStart = subscribe;
-                                subscriberUpdateWhenStart += 1;
                             } else {
-                                subscriberUpdateWhenStart = subscribe;
-                                subscriberUpdateWhenStart += 1;
-                                subscriberUpdateWhenStartforminus = subscribe;
-                                subscriberUpdateWhenStartforminus -= 1;
 
-                            }
-
-                            if (milestone_update) {
-                                if (subscribe == subscribeMileStoneAlert) {
-                                    playAlertOnReachMilestone();
-                                    milestone_update = false;
+                                if (UpdateSubWhenStart) {
+                                    subscriberUpdateWhenStart = subscribe;
+                                    subscriberUpdateWhenStart += 1;
+                                    UpdateSubWhenStart = false;
                                 }
 
-                            }
+                                if (subscribe == subscriberUpdateWhenStart) {
+                                    subscriberUpdateWhenStart += 1;
+                                    if (countformusic % 2 == 0) {
+                                        playAlertOnEachSubscribe();
+                                    }
+                                    subscriberUpdateWhenStartforminus = subscribe;
+                                    subscriberUpdateWhenStartforminus -= 1;
 
-                            jLabel5.setText(nf.format(subscribe));
+                                } else if (subscribe == subscriberUpdateWhenStartforminus) {
+                                    subscriberUpdateWhenStartforminus -= 1;
+                                    if (countformusic % 2 == 0) {
+                                        playAlertForLostSub();
+                                    }
+                                    subscriberUpdateWhenStart = subscribe;
+                                    subscriberUpdateWhenStart += 1;
+                                } else {
+                                    subscriberUpdateWhenStart = subscribe;
+                                    subscriberUpdateWhenStart += 1;
+                                    subscriberUpdateWhenStartforminus = subscribe;
+                                    subscriberUpdateWhenStartforminus -= 1;
+
+                                }
+
+                                if (milestone_update) {
+                                    if (subscribe == subscribeMileStoneAlert) {
+                                        playAlertOnReachMilestone();
+                                        milestone_update = false;
+                                    }
+
+                                }
+                                jLabel5.setText(nf.format(subscribe));
+                            }
                         }
                     }
                 } catch (MalformedURLException ex) {
-
+                    jLabel5.setText("Internet Connection Issue");
                 } catch (IOException | JSONException | InterruptedException ex) {
 
                 }
